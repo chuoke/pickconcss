@@ -1,0 +1,71 @@
+
+// text class name
+$text: 'text';
+// font 
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+$text-muted: color('gray', '600') !default;
+
+// border 
+$border-radius:          .25rem !default;
+$border-width:           1px !default;
+$border-width-bold:      5px !default;
+// border class name
+$border:                 'brd';
+$border-level: (0, 1, 2, 3, 4, 5);
+
+// border default color
+$border-def-color: #eeeeee !default;
+// border-radius class name
+$radius: 'rad';
+
+// shadow class name
+$shadow: 'shadow';
+
+// some class name
+$top: 't';
+$left: 'l';
+$right: 'r';
+$bottom: 'b';
+$top-bottom: 'y';
+$left-right: 'x';
+$left-top: 'lt';
+$left-bootom: 'lb';
+$right-top: 'rt';
+$right-bootom: 'rb'; 
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+  ) !default;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+) !default;
+
+// margin and padding class name
+$margin: 'm';
+$padding: 'p';
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;

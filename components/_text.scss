@@ -1,0 +1,92 @@
+
+// 
+// Text style
+// 
+
+  
+  // Positioning
+  .valign-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .#{$text}-nowrap   { white-space: nowrap !important; }
+    .#{$text}-truncate { 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+
+// Alignment
+ 
+$aligns: (
+     'left',
+     'right',
+     'center',
+     'inherit',
+     'initial',
+     'end',
+     'start',
+     'auto',     
+ );
+@each $align in $aligns {
+    .#{$text}-#{$align} { text-align: $align !important; }
+}
+// Transformation
+
+.#{$text}-lowercase  { text-transform: lowercase !important; }
+.#{$text}-uppercase  { text-transform: uppercase !important; }
+.#{$text}-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+
+.font-weight-normal, .#{$text}-normal { font-weight: $font-weight-normal; }
+.font-weight-bold, .#{$text}-bold     { font-weight: $font-weight-bold; }
+.font-italic, .#{$text}-italic        { font-style: italic; }
+.font-small, .#{$text}-small { font-size: 75%; }
+
+.#{$text}-muted { color: $text-muted !important; }
+// Misc
+.#{$text}-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+
+//
+// Text color
+//
+@each $color_name, $color in $colors {
+    @each $color_type, $color_value in $color {
+      @if $color_type == "base" {
+        .#{$text}-#{$color_name}, .#{$text}-#{$color_name}-#{500} {
+          color: $color_value !important;
+        }
+      }
+      @else if $color_name != "shades" {
+        .#{$text}-#{$color_name}-#{$color_type} {
+          color: $color_value !important;
+        }
+      }
+    }
+  }
+  
+  // Shade classes
+  @each $color, $color_value in $shades {
+    .#{$text}-#{$color} {
+      color: $color_value !important;
+    }
+  }
+  
+  // 
+  // Theme text, some colors has specail meaning
+  //
+  @each $theme, $color in $theme-colors {
+    .#{$text}-#{$theme} {
+      color: $color !important;
+    }
+  }
+

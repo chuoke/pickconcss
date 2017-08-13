@@ -1,0 +1,42 @@
+// Margin and Padding
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+      @each $prop, $abbrev in (margin: $margin, padding: $padding) {
+        @each $size, $length in $spacers {
+  
+          .#{$abbrev}#{$infix}-#{$size}  { #{$prop}:        $length !important; }
+          .#{$abbrev}t#{$infix}-#{$size} { #{$prop}-top:    $length !important; }
+          .#{$abbrev}r#{$infix}-#{$size} { #{$prop}-right:  $length !important; }
+          .#{$abbrev}b#{$infix}-#{$size} { #{$prop}-bottom: $length !important; }
+          .#{$abbrev}l#{$infix}-#{$size} { #{$prop}-left:   $length !important; }
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: $length !important;
+            #{$prop}-left:  $length !important;
+          }
+          .#{$abbrev}y#{$infix}-#{$size} {
+            #{$prop}-top:    $length !important;
+            #{$prop}-bottom: $length !important;
+          }
+        }
+      }
+  
+      // Some special margin utils
+      .#{$margin}#{$infix}-auto  { margin:        auto !important; }
+      .#{$margin}t#{$infix}-auto { margin-top:    auto !important; }
+      .#{$margin}r#{$infix}-auto { margin-right:  auto !important; }
+      .#{$margin}b#{$infix}-auto { margin-bottom: auto !important; }
+      .#{$margin}l#{$infix}-auto { margin-left:   auto !important; }
+      .#{$margin}x#{$infix}-auto {
+        margin-right: auto !important;
+        margin-left:  auto !important;
+      }
+      .#{$margin}y#{$infix}-auto {
+        margin-top:    auto !important;
+        margin-bottom: auto !important;
+      }
+    }
+  }
+  

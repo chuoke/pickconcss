@@ -1,0 +1,169 @@
+//
+// Border
+//
+* { border-style: solid; }
+.#{$border}          { border: $border-width solid color('gray', '200') !important; }
+.#{$border}-bold     { border: $border-width-bold solid color('gray', '200') !important; }
+.#{$border}-dashed   { border-style: dashed !important; }
+// .#{$border}-0        { border: 0 !important; }
+// .#{$border}-#{$top}-0    { border-top: 0 !important; }
+// .#{$border}-#{$right}-0  { border-right: 0 !important; }
+// .#{$border}-#{$bottom}-0 { border-bottom: 0 !important; }
+// .#{$border}-#{$left}-0   { border-left: 0 !important; }
+
+$border-side: (
+    'top': $top,
+    'bottom': $bottom,
+    'left': $left,
+    'right': $right,
+) !default;
+
+@each $side, $name in $border-side {
+    .#{$border}-#{$name} {
+        border-#{$side}-width: $border-width !important; 
+    }
+    .#{$border}-#{$name}-bold {
+        border-#{$side}-width: $border-width-bold !important; 
+    }
+}
+
+
+@each $i in (0, 1, 2, 3, 4, 5) {
+    .#{$border}-#{$i} {
+        border-width: $border-width * $i !important;
+    }
+    .#{$border}-#{$top}-#{$i} {
+        border-top-width: $border-width * $i !important;
+    }
+    .#{$border}-#{$left}-#{$i} {
+        border-left-width: $border-width * $i !important;
+    }
+    .#{$border}-#{$right}-#{$i} {
+        border-right-width: $border-width * $i !important;
+    }
+    .#{$border}-#{$bottom}-#{$i} {
+        border-bottom-width: $border-width * $i !important;
+    }
+    .#{$border}-bold-#{$i} {
+        border-width: $border-width-bold * $i !important;
+    }
+    .#{$border}-#{$top}-bold-#{$i} {
+        border-top-width: $border-width-bold * $i !important;
+    }
+    .#{$border}-#{$left}-bold-#{$i} {
+        border-left-width: $border-width-bold * $i !important;
+    }
+    .#{$border}-#{$right}-bold-#{$i} {
+        border-right-width: $border-width-bold * $i !important;
+    }
+    .#{$border}-#{$bottom}-bold-#{$i} {
+        border-bottom-width: $border-width-bold * $i !important;
+    }
+}
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+        .#{$border}-#{$color_name}, .#{$border}-#{$color_name}-#{500} {
+            border-color: $color_value !important;
+        }
+        .#{$border}-#{$top}-#{$color_name}, .#{$border}-#{$top}-#{$color_name}-#{500} {
+            border-top-color: $color_value !important;
+        }
+        .#{$border}-#{$bottom}-#{$color_name}, .#{$border}-#{$bottom}-#{$color_name}-#{500} {
+            border-bottom-color: $color_value !important;
+        }
+        .#{$border}-#{$left}-#{$color_name}, .#{$border}-#{$left}-#{$color_name}-#{500} {
+            border-left-color: $color_value !important;
+        }
+        .#{$border}-#{$right}-#{$color_name}, .#{$border}-#{$right}-#{$color_name}-#{500} {
+            border-right-color: $color_value !important;
+        }
+    }
+    @else if $color_name != "shades" {
+        .#{$border}-#{$color_name}-#{$color_type} {
+            border-color: $color_value !important;
+        }
+        .#{$border}-#{$top}-#{$color_name}-#{$color_type} {
+            border-top-color: $color_value !important;
+        }
+        .#{$border}-#{$bottom}-#{$color_name}-#{$color_type} {
+            border-bottom-color: $color_value !important;
+        }
+        .#{$border}-#{$left}-#{$color_name}-#{$color_type} {
+            border-left-color: $color_value !important;
+        }
+        .#{$border}-#{$right}-#{$color_name}-#{$color_type} {
+            border-right-color: $color_value !important;
+        }
+    }
+  }
+}
+// Shade classes
+@each $color, $color_value in $shades {
+    .#{$border}-#{$color} {
+        border-color: $color_value !important;
+    } 
+    .#{$border}-#{$top}-#{$color} {
+        border-top-color: $color_value !important;
+    }
+    .#{$border}-#{$bottom}-#{$color} {
+        border-bottom-color: $color_value !important;
+    }
+    .#{$border}-#{$left}-#{$color} {
+        border-left-color: $color_value !important;
+    }
+    .#{$border}-#{$right}-#{$color} {
+        border-right-color: $color_value !important;
+    }
+}
+
+@each $theme, $color in $theme-colors {
+    .#{$border}-#{$theme} {
+        border-color: $color !important;
+    }
+    .#{$border}-#{$top}-#{$theme} {
+        border-top-color: $color !important;
+    }
+    .#{$border}-#{$bottom}-#{$theme} {
+        border-bottom-color: $color !important;
+    }
+    .#{$border}-#{$left}-#{$theme} {
+        border-left-color: $color !important;
+    }
+    .#{$border}-#{$right}-#{$theme} {
+        border-right-color: $color !important;
+    }
+}
+
+//
+// Border-radius
+//
+
+.rounded {
+  border-radius: $border-radius !important;
+}
+.rounded-top {
+  border-top-left-radius: $border-radius !important;
+  border-top-right-radius: $border-radius !important;
+}
+.rounded-right {
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
+}
+.rounded-bottom {
+  border-bottom-right-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+.rounded-left {
+  border-top-left-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-circle, .circle {
+  border-radius: 50%;
+}
+
+.rounded-0 {
+  border-radius: 0;
+}

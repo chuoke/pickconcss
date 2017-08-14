@@ -1,0 +1,239 @@
+//
+// Border
+//
+
+.border          { border: $border-width solid color('gray', '200') !important; }
+.border-bold     { border: $border-width-bold solid color('gray', '200') !important; }
+// .border-0        { border: 0 !important; }
+// .border-top-0    { border-top: 0 !important; }
+// .border-right-0  { border-right: 0 !important; }
+// .border-bottom-0 { border-bottom: 0 !important; }
+// .border-left-0   { border-left: 0 !important; }
+
+$border-side: (
+    'top',
+    'left',
+    'right',
+    'bottom'
+) !default;
+
+// @each $color_name, $color in $colors {
+//   @each $color_type, $color_value in $color {
+//     @if $color_type == "base" {
+//       .border-#{$color_name}, .border-#{$color_name}-#{500}
+//       ,.border.#{$color_name}, .border.#{$color_name}-#{500} {
+//         border-color: $color_value !important;
+//       }
+//     }
+//     @else if $color_name != "shades" {
+//       .border-#{$color_name}-#{$color_type}, .border.#{$color_name}-#{$color_type} {
+//         border-color: $color_value !important;
+//       }
+//     }
+//   }
+// }
+// Shade classes
+// @each $color, $color_value in $shades {
+//   .border-#{$color}, .border.#{$color} {
+//     border-color: $color_value !important;
+//   }
+// }
+
+// @each $theme, $color in $theme-colors {
+//   .border.#{$theme}, .border-#{$theme} {
+//     background-color: $color;
+//   }
+// }
+
+@each $i in (0, 1, 2, 3, 4, 5) {
+    .border-#{$i} {
+        border-width: $border-width * $i !important;
+    }
+    .border-top-#{$i} {
+        border-top-width: $border-width * $i !important;
+    }
+    .border-left-#{$i} {
+        border-left-width: $border-width * $i !important;
+    }
+    .border-right-#{$i} {
+        border-right-width: $border-width * $i !important;
+    }
+    .border-bottom-#{$i} {
+        border-bottom-width: $border-width * $i !important;
+    }
+    .border-bold-#{$i} {
+        border-width: $border-width-bold * $i !important;
+    }
+      .border-top-bold-#{$i} {
+        border-top-width: $border-width-bold * $i !important;
+    }
+    .border-left-bold-#{$i} {
+        border-left-width: $border-width-bold * $i !important;
+    }
+    .border-right-bold-#{$i} {
+        border-right-width: $border-width-bold * $i !important;
+    }
+    .border-bottom-bold-#{$i} {
+        border-bottom-width: $border-width-bold * $i !important;
+    }
+}
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+        .border-#{$color_name}, .border-#{$color_name}-#{500}
+        ,.border.#{$color_name}, .border.#{$color_name}-#{500} {
+            border-color: $color_value !important;
+        }
+        @each $i in (1, 2, 3, 4, 5) {
+            .border-#{$i}.border-#{$color_name}, .border-#{$i}.border-#{$color_name}-#{500}
+            ,.border-#{$i}.#{$color_name}, .border-#{$i}.#{$color_name}-#{500}
+            ,.border-bold-#{$i}.border-#{$color_name}, .border-bold-#{$i}.border-#{$color_name}-#{500}
+            ,.border-bold-#{$i}.#{$color_name}, .border-bold-#{$i}.#{$color_name}-#{500}{
+                border-color: $color_value !important;
+            }
+            .border-top-#{$i}.border-#{$color_name}, .border-top-#{$i}.border-#{$color_name}-#{500}
+            ,.border-top-#{$i}.#{$color_name}, .border-top-#{$i}.#{$color_name}-#{500}
+            ,.border-top-bold-#{$i}.border-#{$color_name}, .border-top-bold-#{$i}.border-#{$color_name}-#{500}
+            ,.border-top-bold-#{$i}.#{$color_name}, .border-top-bold-#{$i}.#{$color_name}-#{500} {
+                border-top-color: $color_value !important;
+            }
+
+            .border-left-#{$i}.border-#{$color_name}, .border-left-#{$i}.border-#{$color_name}-#{500}
+            ,.border-left-#{$i}.#{$color_name}, .border-left-#{$i}.#{$color_name}-#{500}
+            ,.border-left-bold-#{$i}.border-#{$color_name}, .border-left-bold-#{$i}.border-#{$color_name}-#{500}
+            ,.border-left-bold-#{$i}.#{$color_name}, .border-left-bold-#{$i}.#{$color_name}-#{500} {
+                border-left-color: $color_value !important;
+            }
+            .border-right-#{$i}.border-#{$color_name}, .border-right-#{$i}.border-#{$color_name}-#{500}
+            ,.border-right-#{$i}.#{$color_name}, .border-right-#{$i}.#{$color_name}-#{500}
+            ,.border-right-bold-#{$i}.border-#{$color_name}, .border-right-bold-#{$i}.border-#{$color_name}-#{500}
+            ,.border-right-bold-#{$i}.#{$color_name}, .border-right-bold-#{$i}.#{$color_name}-#{500} {
+                border-right-color: $color_value !important;
+            }
+            .border-bottom-#{$i}.border-#{$color_name}, .border-bottom-#{$i}.border-#{$color_name}-#{500}
+            ,.border-bottom-#{$i}.#{$color_name}, .border-bottom-#{$i}.#{$color_name}-#{500}
+            ,.border-bottom-bold-#{$i}.border-#{$color_name}, .border-bottom-bold-#{$i}.border-#{$color_name}-#{500}
+            ,.border-bottom-bold-#{$i}.#{$color_name}, .border-bottom-bold-#{$i}.#{$color_name}-#{500} {
+                border-bottom-color: $color_value !important;
+            }
+        }
+    }
+    @else if $color_name != "shades" {
+        .border-#{$color_name}-#{$color_type}, .border.#{$color_name}-#{$color_type} {
+            border-color: $color_value !important;
+        }
+        @each $i in (1, 2, 3, 4, 5) {
+            .border-#{$i}-#{$color_name}-#{$color_type}, .border-#{$i}.#{$color_name}-#{$color_type} 
+            ,.border-bold-#{$i}-#{$color_name}-#{$color_type}, .border-bold-#{$i}.#{$color_name}-#{$color_type} {
+                border-color: $color_value !important;
+            }
+            .border-top-#{$i}-#{$color_name}-#{$color_type}, .border-top-#{$i}.#{$color_name}-#{$color_type}
+            ,.border-top-bold-#{$i}-#{$color_name}-#{$color_type}, .border-top-bold-#{$i}.#{$color_name}-#{$color_type} {
+                border-top-color: $color_value !important;
+            }
+            .border-left-#{$i}-#{$color_name}-#{$color_type}, .border-left-#{$i}.#{$color_name}-#{$color_type} 
+            ,.border-left-bold-#{$i}-#{$color_name}-#{$color_type}, .border-left-bold-#{$i}.#{$color_name}-#{$color_type} {
+                border-left-color: $color_value !important;
+            }
+            .border-right-#{$i}-#{$color_name}-#{$color_type}, .border-right-#{$i}.#{$color_name}-#{$color_type} 
+            ,.border-right-bold-#{$i}-#{$color_name}-#{$color_type}, .border-right-bold-#{$i}.#{$color_name}-#{$color_type} {
+                border-right-color: $color_value !important;
+            }
+            .border-bottom-#{$i}-#{$color_name}-#{$color_type}, .border-bottom-#{$i}.#{$color_name}-#{$color_type} 
+            ,.border-bottom-bold-#{$i}-#{$color_name}-#{$color_type}, .border-bottom-bold-#{$i}.#{$color_name}-#{$color_type} {
+                border-bottom-color: $color_value !important;
+            }
+        }
+      
+    }
+  }
+}
+// Shade classes
+@each $color, $color_value in $shades {
+    .border-#{$color}, .border.#{$color} {
+        border-color: $color_value !important;
+    }
+    @each $i in (1, 2, 3, 4, 5) {
+        .border-#{$i}-#{$color}, .border-#{$i}.#{$color} 
+        ,.border-bold-#{$i}-#{$color}, .border-bold-#{$i}.#{$color} {
+            border-color: $color_value !important;
+        }
+        .border-top-#{$i}-#{$color}, .border-top-#{$i}.#{$color}
+        ,.border-top-bold-#{$i}-#{$color}, .border-top-bold-#{$i}.#{$color} {
+            border-top-color: $color_value !important;
+        }
+        .border-left-#{$i}-#{$color}, .border-left-#{$i}.#{$color} 
+        ,.border-left-bold-#{$i}-#{$color}, .border-left-bold-#{$i}.#{$color} {
+            border-left-color: $color_value !important;
+        }
+        .border-right-#{$i}-#{$color}, .border-right-#{$i}.#{$color} 
+        ,.border-right-bold-#{$i}-#{$color}, .border-right-bold-#{$i}.#{$color} {
+            border-right-color: $color_value !important;
+        }
+        .border-bottom-#{$i}-#{$color}, .border-bottom-#{$i}.#{$color} 
+        ,.border-bottom-bold-#{$i}-#{$color}, .border-bottom-bold-#{$i}.#{$color} {
+            border-bottom-color: $color_value !important;
+        }
+    }
+}
+
+@each $theme, $color in $theme-colors {
+    .border.#{$theme}, .border-#{$theme} {
+        border-color: $color;
+    }
+    @each $i in (1, 2, 3, 4, 5) {
+        .border-#{$i}-#{$theme}, .border-#{$i}.#{$theme} 
+        ,.border-bold-#{$i}-#{$theme}, .border-bold-#{$i}.#{$theme} {
+            border-color: $color !important;
+        }
+        .border-top-#{$i}-#{$theme}, .border-top-#{$i}.#{$theme}
+        ,.border-top-bold-#{$i}-#{$theme}, .border-top-bold-#{$i}.#{$theme} {
+            border-top-color: $color !important;
+        }
+        .border-left-#{$i}-#{$theme}, .border-left-#{$i}.#{$theme} 
+        ,.border-left-bold-#{$i}-#{$theme}, .border-left-bold-#{$i}.#{$theme} {
+            border-left-color: $color !important;
+        }
+        .border-right-#{$i}-#{$theme}, .border-right-#{$i}.#{$theme} 
+        ,.border-right-bold-#{$i}-#{$theme}, .border-right-bold-#{$i}.#{$theme} {
+            border-right-color: $color !important;
+        }
+        .border-bottom-#{$i}-#{$theme}, .border-bottom-#{$i}.#{$theme} 
+        ,.border-bottom-bold-#{$i}-#{$theme}, .border-bottom-bold-#{$i}.#{$theme} {
+            border-bottom-color: $color !important;
+        }
+    }
+}
+
+//
+// Border-radius
+//
+
+.rounded {
+  border-radius: $border-radius !important;
+}
+.rounded-top {
+  border-top-left-radius: $border-radius !important;
+  border-top-right-radius: $border-radius !important;
+}
+.rounded-right {
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
+}
+.rounded-bottom {
+  border-bottom-right-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+.rounded-left {
+  border-top-left-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-circle, .circle {
+  border-radius: 50%;
+}
+
+.rounded-0 {
+  border-radius: 0;
+}

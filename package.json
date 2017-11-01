@@ -1,0 +1,35 @@
+{
+  "name": "pickconcss",
+  "version": "1.0.0",
+  "description": "Some common css",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuoke/pickconcss.git"
+  },
+  "keywords": [
+    "css",
+    "color"
+  ],
+  "author": "chuoke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chuoke/pickconcss/issues"
+  },
+  "homepage": "https://github.com/chuoke/pickconcss",
+  "style": "dist/css/pickcon.css",
+  "sass": "scss/pickcon.scss",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "scss": "node-sass --output-style compressed -o dist/css scss && npm run autoprefixer",
+    "dist": "npm-run-all --parallel css js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "eslint": "^4.10.0",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.1",
+    "webpack": "^3.8.1"
+  }
+}

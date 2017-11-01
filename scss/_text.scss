@@ -62,11 +62,11 @@ $aligns: (
 @each $color_name, $color in $colors {
     @each $color_type, $color_value in $color {
       @if $color_type == "base" {
-        .#{$text}-#{$color_name}, .#{$text}-#{$color_name}-#{500} {
+        .#{$text}-#{$color_name} {
           color: $color_value !important;
         }
       }
-      @else if $color_name != "shades" {
+      @else {
         .#{$text}-#{$color_name}-#{$color_type} {
           color: $color_value !important;
         }
@@ -74,12 +74,12 @@ $aligns: (
     }
   }
   
-  // Shade classes
-  @each $color, $color_value in $shades {
-    .#{$text}-#{$color} {
-      color: $color_value !important;
-    }
-  }
+  // // Shade classes
+  // @each $color, $color_value in $shades {
+  //   .#{$text}-#{$color} {
+  //     color: $color_value !important;
+  //   }
+  // }
   
   // 
   // Theme text, some colors has specail meaning

@@ -41,7 +41,7 @@ $right-bootom: 'rb';
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
 $grid-breakpoints: (
-    xs: 0,
+    xs: 10px,
     sm: 576px,
     md: 768px,
     lg: 992px,

@@ -1,0 +1,464 @@
+// Color Classes
+
+
+// Google Color Palette defined: http://www.google.com/design/spec/style/color.html
+
+// background color class's prefix name 
+$background: '';
+
+$gray-level-50:   '50';
+$gray-level-100:  '100';
+$gray-level-200:  '200';
+$gray-level-300:  '300';
+$gray-level-400:  '400';
+$gray-level-500:  '500';
+$gray-level-600:  '600';
+$gray-level-700:  '700';
+$gray-level-800:  '800';
+$gray-level-900:  '900';
+$gray-level-a100: 'a100';
+$gray-level-a200: 'a200';
+$gray-level-a300: 'a300';
+$gray-level-a400: 'a400';
+
+$red: (
+  "base":           #F44336,
+  $gray-level-50:   #FFEBEE,
+  $gray-level-100:  #FFCDD2,
+  $gray-level-200:  #EF9A9A,
+  $gray-level-300:  #E57373,
+  $gray-level-400:  #EF5350,
+  $gray-level-500:  #F44336,
+  $gray-level-600:  #E53935,
+  $gray-level-700:  #D32F2F,
+  $gray-level-800:  #C62828,
+  $gray-level-900:  #B71C1C,
+  $gray-level-a100: #FF8A80,
+  $gray-level-a200: #FF5252,
+  $gray-level-a300: #FF1744,
+  $gray-level-a400: #D50000
+);
+
+$pink: (
+  "base":           #e91e63,
+  $gray-level-50:   #fce4ec,
+  $gray-level-100:  #f8bbd0,
+  $gray-level-200:  #f48fb1,
+  $gray-level-300:  #f06292,
+  $gray-level-400:  #ec407a,
+  $gray-level-500:  #e91e63,
+  $gray-level-600:  #d81b60,
+  $gray-level-700:  #c2185b,
+  $gray-level-800:  #ad1457,
+  $gray-level-900:  #880e4f,
+  $gray-level-a100: #ff80ab,
+  $gray-level-a200: #ff4081,
+  $gray-level-a300: #f50057,
+  $gray-level-a400: #c51162
+);
+
+$purple: (
+  "base":           #9c27b0,
+  $gray-level-50:   #f3e5f5,
+  $gray-level-100:  #e1bee7,
+  $gray-level-200:  #ce93d8,
+  $gray-level-300:  #ba68c8,
+  $gray-level-400:  #ab47bc,
+  $gray-level-500:  #9c27b0,
+  $gray-level-600:  #8e24aa,
+  $gray-level-700:  #7b1fa2,
+  $gray-level-800:  #6a1b9a,
+  $gray-level-900:  #4a148c,
+  $gray-level-a100: #ea80fc,
+  $gray-level-a200: #e040fb,
+  $gray-level-a300: #d500f9,
+  $gray-level-a400: #aa00ff
+);
+
+$deep-purple: (
+  "base":           #673ab7,
+  $gray-level-50:   #ede7f6,
+  $gray-level-100:  #d1c4e9,
+  $gray-level-200:  #b39ddb,
+  $gray-level-300:  #9575cd,
+  $gray-level-400:  #7e57c2,
+  $gray-level-500:  #673ab7,
+  $gray-level-600:  #5e35b1,
+  $gray-level-700:  #512da8,
+  $gray-level-800:  #4527a0,
+  $gray-level-900:  #311b92,
+  $gray-level-a100: #b388ff,
+  $gray-level-a200: #7c4dff,
+  $gray-level-a300: #651fff,
+  $gray-level-a400: #6200ea
+);
+
+$indigo: (
+  "base":           #3f51b5,
+  $gray-level-50:   #e8eaf6,
+  $gray-level-100:  #c5cae9,
+  $gray-level-200:  #9fa8da,
+  $gray-level-300:  #7986cb,
+  $gray-level-400:  #5c6bc0,
+  $gray-level-500:  #3f51b5,
+  $gray-level-600:  #3949ab,
+  $gray-level-700:  #303f9f,
+  $gray-level-800:  #283593,
+  $gray-level-900:  #1a237e,
+  $gray-level-a100: #8c9eff,
+  $gray-level-a200: #536dfe,
+  $gray-level-a300: #3d5afe,
+  $gray-level-a400: #304ffe
+);
+
+$blue: (
+  "base":           #2196F3,
+  $gray-level-50:   #E3F2FD,
+  $gray-level-100:  #BBDEFB,
+  $gray-level-200:  #90CAF9,
+  $gray-level-300:  #64B5F6,
+  $gray-level-400:  #42A5F5,
+  $gray-level-500:  #2196F3,
+  $gray-level-600:  #1E88E5,
+  $gray-level-700:  #1976D2,
+  $gray-level-800:  #1565C0,
+  $gray-level-900:  #0D47A1,
+  $gray-level-a100: #82B1FF,
+  $gray-level-a200: #448AFF,
+  $gray-level-a300: #2979FF,
+  $gray-level-a400: #2962FF
+);
+
+$light-blue: (
+  "base":           #03a9f4,
+  $gray-level-50:   #e1f5fe,
+  $gray-level-100:  #b3e5fc,
+  $gray-level-200:  #81d4fa,
+  $gray-level-300:  #4fc3f7,
+  $gray-level-400:  #29b6f6,
+  $gray-level-500:  #03a9f4,
+  $gray-level-600:  #039be5,
+  $gray-level-700:  #0288d1,
+  $gray-level-800:  #0277bd,
+  $gray-level-900:  #01579b,
+  $gray-level-a100: #80d8ff,
+  $gray-level-a200: #40c4ff,
+  $gray-level-a300: #00b0ff,
+  $gray-level-a400: #0091ea
+);
+
+$cyan: (
+  "base":           #00bcd4,
+  $gray-level-50:   #e0f7fa,
+  $gray-level-100:  #b2ebf2,
+  $gray-level-200:  #80deea,
+  $gray-level-300:  #4dd0e1,
+  $gray-level-400:  #26c6da,
+  $gray-level-500:  #00bcd4,
+  $gray-level-600:  #00acc1,
+  $gray-level-700:  #0097a7,
+  $gray-level-800:  #00838f,
+  $gray-level-900:  #006064,
+  $gray-level-a100: #84ffff,
+  $gray-level-a200: #18ffff,
+  $gray-level-a300: #00e5ff,
+  $gray-level-a400: #00b8d4
+);
+
+$teal: (
+  "base":           #009688,
+  $gray-level-50:   #e0f2f1,
+  $gray-level-100:  #b2dfdb,
+  $gray-level-200:  #80cbc4,
+  $gray-level-300:  #4db6ac,
+  $gray-level-400:  #26a69a,
+  $gray-level-500:  #009688,
+  $gray-level-600:  #00897b,
+  $gray-level-700:  #00796b,
+  $gray-level-800:  #00695c,
+  $gray-level-900:  #004d40,
+  $gray-level-a100: #a7ffeb,
+  $gray-level-a200: #64ffda,
+  $gray-level-a300: #1de9b6,
+  $gray-level-a400: #00bfa5
+);
+
+$green: (
+  "base":           #4CAF50,
+  $gray-level-50:   #E8F5E9,
+  $gray-level-100:  #C8E6C9,
+  $gray-level-200:  #A5D6A7,
+  $gray-level-300:  #81C784,
+  $gray-level-400:  #66BB6A,
+  $gray-level-500:  #4CAF50,
+  $gray-level-600:  #43A047,
+  $gray-level-700:  #388E3C,
+  $gray-level-800:  #2E7D32,
+  $gray-level-900:  #1B5E20,
+  $gray-level-a100: #B9F6CA,
+  $gray-level-a200: #69F0AE,
+  $gray-level-a300: #00E676,
+  $gray-level-a400: #00C853
+);
+
+$light-green: (
+  "base":           #8bc34a,
+  $gray-level-50:   #f1f8e9,
+  $gray-level-100:  #dcedc8,
+  $gray-level-200:  #c5e1a5,
+  $gray-level-300:  #aed581,
+  $gray-level-400:  #9ccc65,
+  $gray-level-500:  #8bc34a,
+  $gray-level-600:  #7cb342,
+  $gray-level-700:  #689f38,
+  $gray-level-800:  #558b2f,
+  $gray-level-900:  #33691e,
+  $gray-level-a100: #ccff90,
+  $gray-level-a200: #b2ff59,
+  $gray-level-a300: #76ff03,
+  $gray-level-a400: #64dd17
+);
+
+$lime: (
+  "base":           #cddc39,
+  $gray-level-50:   #f9fbe7,
+  $gray-level-100:  #f0f4c3,
+  $gray-level-200:  #e6ee9c,
+  $gray-level-300:  #dce775,
+  $gray-level-400:  #d4e157,
+  $gray-level-500:  #cddc39,
+  $gray-level-600:  #c0ca33,
+  $gray-level-700:  #afb42b,
+  $gray-level-800:  #9e9d24,
+  $gray-level-900:  #827717,
+  $gray-level-a100: #f4ff81,
+  $gray-level-a200: #eeff41,
+  $gray-level-a300: #c6ff00,
+  $gray-level-a400: #aeea00
+);
+
+$yellow: (
+  "base":           #ffeb3b,
+  $gray-level-50:   #fffde7,
+  $gray-level-100:  #fff9c4,
+  $gray-level-200:  #fff59d,
+  $gray-level-300:  #fff176,
+  $gray-level-400:  #ffee58,
+  $gray-level-500:  #ffeb3b,
+  $gray-level-600:  #fdd835,
+  $gray-level-700:  #fbc02d,
+  $gray-level-800:  #f9a825,
+  $gray-level-900:  #f57f17,
+  $gray-level-a100: #ffff8d,
+  $gray-level-a200: #ffff00,
+  $gray-level-a300: #ffea00,
+  $gray-level-a400: #ffd600
+);
+
+$amber: (
+  "base":           #ffc107,
+  $gray-level-50:   #fff8e1,
+  $gray-level-100:  #ffecb3,
+  $gray-level-200:  #ffe082,
+  $gray-level-300:  #ffd54f,
+  $gray-level-400:  #ffca28,
+  $gray-level-500:  #ffc107,
+  $gray-level-600:  #ffb300,
+  $gray-level-700:  #ffa000,
+  $gray-level-800:  #ff8f00,
+  $gray-level-900:  #ff6f00,
+  $gray-level-a100: #ffe57f,
+  $gray-level-a200: #ffd740,
+  $gray-level-a300: #ffc400,
+  $gray-level-a400: #ffab00
+);
+
+$orange: (
+  "base":           #ff9800,
+  $gray-level-50:   #fff3e0,
+  $gray-level-100:  #ffe0b2,
+  $gray-level-200:  #ffcc80,
+  $gray-level-300:  #ffb74d,
+  $gray-level-400:  #ffa726,
+  $gray-level-500:  #ff9800,
+  $gray-level-600:  #fb8c00,
+  $gray-level-700:  #f57c00,
+  $gray-level-800:  #ef6c00,
+  $gray-level-900:  #e65100,
+  $gray-level-a100: #ffd180,
+  $gray-level-a200: #ffab40,
+  $gray-level-a300: #ff9100,
+  $gray-level-a400: #ff6d00
+);
+
+$deep-orange: (
+  "base":           #ff5722,
+  $gray-level-50:   #fbe9e7,
+  $gray-level-100:  #ffccbc,
+  $gray-level-200:  #ffab91,
+  $gray-level-300:  #ff8a65,
+  $gray-level-400:  #ff7043,
+  $gray-level-500:  #ff5722,
+  $gray-level-600:  #f4511e,
+  $gray-level-700:  #e64a19,
+  $gray-level-800:  #d84315,
+  $gray-level-900:  #bf360c,
+  $gray-level-a100: #ff9e80,
+  $gray-level-a200: #ff6e40,
+  $gray-level-a300: #ff3d00,
+  $gray-level-a400: #dd2c00
+);
+
+$brown: (
+  "base":           #795548,
+  $gray-level-50:   #efebe9,
+  $gray-level-100:  #d7ccc8,
+  $gray-level-200:  #bcaaa4,
+  $gray-level-300:  #a1887f,
+  $gray-level-400:  #8d6e63,
+  $gray-level-500:  #795548,
+  $gray-level-600:  #6d4c41,
+  $gray-level-700:  #5d4037,
+  $gray-level-800:  #4e342e,
+  $gray-level-900:  #3e2723
+);
+
+$blue-grey: (
+  "base":           #607d8b,
+  $gray-level-50:   #eceff1,
+  $gray-level-100:  #cfd8dc,
+  $gray-level-200:  #b0bec5,
+  $gray-level-300:  #90a4ae,
+  $gray-level-400:  #78909c,
+  $gray-level-500:  #607d8b,
+  $gray-level-600:  #546e7a,
+  $gray-level-700:  #455a64,
+  $gray-level-800:  #37474f,
+  $gray-level-900:  #263238
+);
+
+$grey: (
+  "base":           #9e9e9e,
+  $gray-level-50:   #fafafa,
+  $gray-level-100:  #f5f5f5,
+  $gray-level-200:  #eeeeee,
+  $gray-level-300:  #e0e0e0,
+  $gray-level-400:  #bdbdbd,
+  $gray-level-500:  #9e9e9e,
+  $gray-level-600:  #757575,
+  $gray-level-700:  #616161,
+  $gray-level-800:  #424242,
+  $gray-level-900:  #212121
+);
+
+$white: (
+  "base":           #FFFFFF
+);
+
+$black: (
+  "base":           #000000
+);
+
+$transparent: (
+  "base":             transparent
+);
+
+// $shades: (
+//   "black":        #000000,
+//   "white":        #FFFFFF,
+//   "transparent":  transparent
+// );
+
+$colors: (
+  "red": $red,
+  "pink": $pink,
+  "purple": $purple,
+  "deep-purple": $deep-purple,
+  "indigo": $indigo,
+  "blue": $blue,
+  "light-blue": $light-blue,
+  "cyan": $cyan,
+  "teal": $teal,
+  "green": $green,
+  "light-green": $light-green,
+  "lime": $lime,
+  "yellow": $yellow,
+  "amber": $amber,
+  "orange": $orange,
+  "deep-orange": $deep-orange,
+  "brown": $brown,
+  "blue-grey": $blue-grey,
+  "grey": $grey,
+  "blue-gray": $blue-grey,
+  "gray": $grey,
+  // "shades": $shades
+  "white": $white,
+  "black": $black,
+  "transparent": $transparent
+) !default;
+
+
+// Color Classes
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      .#{$background}#{$color_name} {
+        background-color: $color_value !important;
+      }
+    }
+    @else {
+      .#{$background}#{$color_name}-#{$color_type} {
+        background-color: $color_value !important;
+      }
+    }
+  }
+}
+
+// Shade classes
+// @each $color, $color_value in $shades {
+//   .#{$background}#{$color} {
+//     background-color: $color_value !important;
+//   }
+// }
+
+
+// usage: color("name_of_color", "type_of_color")
+// to avoid to repeating map-get($colors, ...)
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{$color}` - `#{$type}` in $colors.";
+  @return null;
+}
+
+// 
+// Theme color, some colors has specail meaning
+//
+$white: 'white';
+
+$theme-colors: (
+  primary:   color('blue', 'base'), // blue
+  secondary: color('gray', '600'), // $gray-600,
+  fade:      color('gray', '300'), // $gray-600,
+  success:   color('green', 'base'), // $green,
+  info:      color('cyan', 'base'), // $cyan,
+  warning:   color('yellow', 'base'), // $yellow,
+  danger:    color('red', 'base'), // $red,
+  light:     color('gray', '100'), // $gray-100,
+  dark:      color('gray', '800'), // $gray-800,
+  // $white: color('shades', 'white'), // $white
+  $white:    color('white', 'base'), // $white
+) !default;
+
+$theme-prefix: 'bg-';
+@each $theme, $color in $theme-colors {
+  .#{$theme-prefix}#{$theme} {
+    background-color: $color;
+  }
+}

@@ -116,7 +116,7 @@ $border-side: (
             border-right-color: $color_value !important;
         }
     }
-    @else if $color_name != "shades" {
+    @else {
         .#{$border}-#{$color_name}-#{$color_type} {
             border-color: $color_value !important;
         }
@@ -136,23 +136,23 @@ $border-side: (
   }
 }
 // Shade classes
-@each $color, $color_value in $shades {
-    .#{$border}-#{$color} {
-        border-color: $color_value !important;
-    } 
-    .#{$border}#{$top}-#{$color} {
-        border-top-color: $color_value !important;
-    }
-    .#{$border}#{$bottom}-#{$color} {
-        border-bottom-color: $color_value !important;
-    }
-    .#{$border}#{$left}-#{$color} {
-        border-left-color: $color_value !important;
-    }
-    .#{$border}#{$right}-#{$color} {
-        border-right-color: $color_value !important;
-    }
-}
+// @each $color, $color_value in $shades {
+//     .#{$border}-#{$color} {
+//         border-color: $color_value !important;
+//     } 
+//     .#{$border}#{$top}-#{$color} {
+//         border-top-color: $color_value !important;
+//     }
+//     .#{$border}#{$bottom}-#{$color} {
+//         border-bottom-color: $color_value !important;
+//     }
+//     .#{$border}#{$left}-#{$color} {
+//         border-left-color: $color_value !important;
+//     }
+//     .#{$border}#{$right}-#{$color} {
+//         border-right-color: $color_value !important;
+//     }
+// }
 
 @each $theme, $color in $theme-colors {
     .#{$border}-#{$theme} {

@@ -1,38 +1,38 @@
 
 // text class name
-$text: 'text';
+$pk-text-name: 'text';
 // font 
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
-$text-muted: color('gray', '600') !default;
+$pk-font-weight-normal: normal !default;
+$pk-font-weight-bold: bold !default;
+$pk-text-muted: color('gray', '600') !default;
 
 // border 
-$border-radius:          .25rem !default;
-$border-width:           1px !default;
-$border-width-bold:      5px !default;
+$pk-border-radius:          .25rem !default;
+$pk-border-width:           1px !default;
+$pk-border-width-bold:      5px !default;
 // border class name
-$border:                 'brd';
-$border-level: (0, 1, 2, 3, 4, 5);
+$pk-border-name:         'brd';
+$pk-border-level: (0, 1, 2, 3, 4, 5);
 
 // border default color
-$border-def-color: #eeeeee !default;
+$pk-border-def-color: #eeeeee !default;
 // border-radius class name
-$radius: 'rad';
+$pk-radius-name: 'rad';
 
 // shadow class name
-$shadow: 'shadow';
+$pk-shadow-name: 'shadow';
 
 // some class name
-$top: 't';
-$left: 'l';
-$right: 'r';
-$bottom: 'b';
-$top-bottom: 'y';
-$left-right: 'x';
-$left-top: 'lt';
-$left-bootom: 'lb';
-$right-top: 'rt';
-$right-bootom: 'rb'; 
+$pk-top-name: 't';
+$pk-left-name: 'l';
+$pk-right-name: 'r';
+$pk-bottom-name: 'b';
+$pk-top-bottom-name: 'y';
+$pk-left-right-name: 'x';
+$pk-left-top-name: 'lt';
+$pk-left-bootom-name: 'lb';
+$pk-right-top-name: 'rt';
+$pk-right-bootom-name: 'rb'; 
 
 
 // Spacing
@@ -40,7 +40,7 @@ $right-bootom: 'rb';
 // Control the default styling of most Bootstrap elements by modifying these
 // variables. Mostly focused on spacing.
 // You can add more entries to the $spacers map, should you need more variation.
-$grid-breakpoints: (
+$pk-grid-breakpoints: (
     xs: 10px,
     sm: 576px,
     md: 768px,
@@ -48,22 +48,22 @@ $grid-breakpoints: (
     xl: 1200px
   ) !default;
 
-$spacer: 1rem !default;
-$spacers: (
+$pk-spacer: 1rem !default;
+$pk-spacers: (
   0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
+  1: ($pk-spacer * .25),
+  2: ($pk-spacer * .5),
+  3: $pk-spacer,
+  4: ($pk-spacer * 1.5),
+  5: ($pk-spacer * 3)
 ) !default;
 
 // margin and padding class name
-$margin: 'm';
-$padding: 'p';
+$pk-margin-name: 'm';
+$pk-padding-name: 'p';
 
 // This variable affects the `.h-*` and `.w-*` classes.
-$sizes: (
+$pk-sizes: (
   25: 25%,
   50: 50%,
   75: 75%,

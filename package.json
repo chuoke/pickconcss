@@ -22,6 +22,7 @@
   "scripts": {
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
     "scss": "node-sass --output-style compressed -o dist/css scss && npm run autoprefixer",
+    "build:css": "run-s lint-scss scss autoprefixer",
     "dist": "npm-run-all --parallel css js"
   },
   "devDependencies": {

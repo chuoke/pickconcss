@@ -14,7 +14,7 @@
 //    md
 //    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
 //    md
-@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+@function pk-breakpoint-next($name, $breakpoints: $pk-grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
   $n: index($breakpoint-names, $name);
   @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
 }
@@ -23,7 +23,7 @@
 //
 //    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    576px
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+@function pk-breakpoint-min($name, $breakpoints: $pk-grid-breakpoints) {
   $min: map-get($breakpoints, $name);
   @return if($min != 0, $min, null);
 }
@@ -33,9 +33,9 @@
 //
 //    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    767px
-@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
-  $next: breakpoint-next($name, $breakpoints);
-  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+@function pk-breakpoint-max($name, $breakpoints: $pk-grid-breakpoints) {
+  $next: pk-breakpoint-next($name, $breakpoints);
+  @return if($next, pk-breakpoint-min($next, $breakpoints) - 1px, null);
 }
 
 // Returns a blank string if smallest breakpoint, otherwise returns the name with a dash infront.
@@ -45,14 +45,14 @@
 //    ""  (Returns a blank string)
 //    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 //    "-sm"
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
-  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+@function pk-breakpoint-infix($name, $breakpoints: $pk-grid-breakpoints) {
+  @return if(pk-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
+@mixin pk-media-breakpoint-up($name, $breakpoints: $pk-grid-breakpoints) {
+  $min: pk-breakpoint-min($name, $breakpoints);
   @if $min {
     @media (min-width: $min) {
       @content;
@@ -64,8 +64,8 @@
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
-  $max: breakpoint-max($name, $breakpoints);
+@mixin pk-media-breakpoint-down($name, $breakpoints: $pk-grid-breakpoints) {
+  $max: pk-breakpoint-max($name, $breakpoints);
   @if $max {
     @media (max-width: $max) {
       @content;
@@ -77,9 +77,9 @@
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($lower, $breakpoints);
-  $max: breakpoint-max($upper, $breakpoints);
+@mixin pk-media-breakpoint-between($lower, $upper, $breakpoints: $pk-grid-breakpoints) {
+  $min: pk-breakpoint-min($lower, $breakpoints);
+  $max: pk-breakpoint-max($upper, $breakpoints);
 
   @media (min-width: $min) and (max-width: $max) {
     @content;
@@ -89,17 +89,17 @@
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
-@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  $max: breakpoint-max($name, $breakpoints);
+@mixin pk-media-breakpoint-only($name, $breakpoints: $pk-grid-breakpoints) {
+  $min: pk-breakpoint-min($name, $breakpoints);
+  $max: pk-breakpoint-max($name, $breakpoints);
 
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
   } @else if $max == null {
-    @include media-breakpoint-up($name)
+    @include pk-media-breakpoint-up($name)
   } @else if $min == null {
-    @include media-breakpoint-down($name)
+    @include pk-media-breakpoint-down($name)
   }
 }

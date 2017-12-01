@@ -1,5 +1,5 @@
-@mixin box-shadow($shadow...) {
-  @if $enable-shadows {
+@mixin pk-box-shadow($shadow...) {
+  @if $pk-enable-shadows {
     box-shadow: $shadow;
   }
 }

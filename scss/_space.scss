@@ -1,11 +1,11 @@
 // Margin and Padding
 
-@each $breakpoint in map-keys($grid-breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
-      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+@each $breakpoint in map-keys($pk-grid-breakpoints) {
+    @include pk-media-breakpoint-up($breakpoint) {
+      $infix: pk-breakpoint-infix($breakpoint, $pk-grid-breakpoints);
   
-      @each $prop, $abbrev in (margin: $margin, padding: $padding) {
-        @each $size, $length in $spacers {
+      @each $prop, $abbrev in (margin: $pk-margin-name, padding: $pk-padding-name) {
+        @each $size, $length in $pk-spacers {
   
           .#{$abbrev}#{$infix}-#{$size}  { #{$prop}:        $length !important; }
           .#{$abbrev}t#{$infix}-#{$size} { #{$prop}-top:    $length !important; }
@@ -24,20 +24,20 @@
       }
   
       // Some special margin utils
-      .#{$margin}#{$infix}-auto  { margin:        auto !important; }
-      .#{$margin}t#{$infix}-auto { margin-top:    auto !important; }
-      .#{$margin}r#{$infix}-auto { margin-right:  auto !important; }
-      .#{$margin}b#{$infix}-auto { margin-bottom: auto !important; }
-      .#{$margin}l#{$infix}-auto { margin-left:   auto !important; }
-      .#{$margin}x#{$infix}-auto {
+      .#{$pk-margin-name}#{$infix}-auto  { margin:        auto !important; }
+      .#{$pk-margin-name}t#{$infix}-auto { margin-top:    auto !important; }
+      .#{$pk-margin-name}r#{$infix}-auto { margin-right:  auto !important; }
+      .#{$pk-margin-name}b#{$infix}-auto { margin-bottom: auto !important; }
+      .#{$pk-margin-name}l#{$infix}-auto { margin-left:   auto !important; }
+      .#{$pk-margin-name}x#{$infix}-auto {
         margin-right: auto !important;
         margin-left:  auto !important;
       }
-      .#{$margin}y#{$infix}-auto {
+      .#{$pk-margin-name}y#{$infix}-auto {
         margin-top:    auto !important;
         margin-bottom: auto !important;
       }
-      @each $size, $val in $sizes {
+      @each $size, $val in $pk-sizes {
         .w#{$infix}-#{$size} {
           width: $val !important;
         }

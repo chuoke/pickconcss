@@ -2,7 +2,7 @@
 // Width and height
 
 @each $prop, $abbrev in (width: w, height: h) {
-    @each $size, $length in $sizes {
+    @each $size, $length in $pk-sizes {
       .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
     }
   }

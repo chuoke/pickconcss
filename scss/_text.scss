@@ -9,8 +9,8 @@
       display: flex;
       align-items: center;
     }
-    .#{$text}-nowrap   { white-space: nowrap !important; }
-    .#{$text}-truncate { 
+    .#{$pk-text-name}-nowrap   { white-space: nowrap !important; }
+    .#{$pk-text-name}-truncate { 
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -19,7 +19,7 @@
 
 // Alignment
  
-$aligns: (
+$pk-aligns: (
      'left',
      'right',
      'center',
@@ -29,25 +29,25 @@ $aligns: (
      'start',
      'auto',     
  );
-@each $align in $aligns {
-    .#{$text}-#{$align} { text-align: $align !important; }
+@each $align in $pk-aligns {
+    .#{$pk-text-name}-#{$align} { text-align: $align !important; }
 }
 // Transformation
 
-.#{$text}-lowercase  { text-transform: lowercase !important; }
-.#{$text}-uppercase  { text-transform: uppercase !important; }
-.#{$text}-capitalize { text-transform: capitalize !important; }
+.#{$pk-text-name}-lowercase  { text-transform: lowercase !important; }
+.#{$pk-text-name}-uppercase  { text-transform: uppercase !important; }
+.#{$pk-text-name}-capitalize { text-transform: capitalize !important; }
 
 // Weight and italics
 
-.font-weight-normal, .#{$text}-normal { font-weight: $font-weight-normal; }
-.font-weight-bold, .#{$text}-bold     { font-weight: $font-weight-bold; }
-.font-italic, .#{$text}-italic        { font-style: italic; }
-.font-small, .#{$text}-small { font-size: 75%; }
+.font-weight-normal, .#{$pk-text-name}-normal { font-weight: $pk-font-weight-normal; }
+.font-weight-bold, .#{$pk-text-name}-bold     { font-weight: $pk-font-weight-bold; }
+.font-italic, .#{$pk-text-name}-italic        { font-style: italic; }
+.font-small, .#{$pk-text-name}-small { font-size: 75%; }
 
-.#{$text}-muted { color: $text-muted !important; }
+.#{$pk-text-name}-muted { color: $pk-text-muted !important; }
 // Misc
-.#{$text}-hide {
+.#{$pk-text-name}-hide {
     font: 0/0 a;
     color: transparent;
     text-shadow: none;
@@ -59,15 +59,15 @@ $aligns: (
 //
 // Text color
 //
-@each $color_name, $color in $colors {
+@each $color_name, $color in $pk-colors {
     @each $color_type, $color_value in $color {
       @if $color_type == "base" {
-        .#{$text}-#{$color_name} {
+        .#{$pk-text-name}-#{$color_name} {
           color: $color_value !important;
         }
       }
       @else {
-        .#{$text}-#{$color_name}-#{$color_type} {
+        .#{$pk-text-name}-#{$color_name}-#{$color_type} {
           color: $color_value !important;
         }
       }
@@ -76,7 +76,7 @@ $aligns: (
   
   // // Shade classes
   // @each $color, $color_value in $shades {
-  //   .#{$text}-#{$color} {
+  //   .#{$pk-text-name}-#{$color} {
   //     color: $color_value !important;
   //   }
   // }
@@ -84,8 +84,8 @@ $aligns: (
   // 
   // Theme text, some colors has specail meaning
   //
-  @each $theme, $color in $theme-colors {
-    .#{$text}-#{$theme} {
+  @each $theme, $color in $pk-theme-colors {
+    .#{$pk-text-name}-#{$theme} {
       color: $color !important;
     }
   }

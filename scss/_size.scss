@@ -9,3 +9,17 @@
   
   .mw-100 { max-width: 100% !important; }
   .mh-100 { max-height: 100% !important; }
+
+  // Margin and Padding
+
+@each $breakpoint in map-keys($pk-grid-breakpoints) {
+  @include pk-media-breakpoint-up($breakpoint) {
+    $infix: pk-breakpoint-infix($breakpoint, $pk-grid-breakpoints);
+    
+    @each $size, $val in $pk-sizes {
+      .w#{$infix}-#{$size} {
+        width: $val !important;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ $pk-text-name: 'text';
 // font 
 $pk-font-weight-normal: normal !default;
 $pk-font-weight-bold: bold !default;
-$pk-text-muted: color('gray', '600') !default;
+$pk-text-muted: pk-color('gray', '600') !default;
 
 // border 
 $pk-border-radius:          .25rem !default;

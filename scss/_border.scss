@@ -197,9 +197,9 @@ $pk-border-side: (
 }
 
 .#{$pk-radius-name}-circle, .circle {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .#{$pk-radius-name}-#{0} { 
-  border-radius: 0;
+  border-radius: 0 !important;
 }
